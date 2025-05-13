@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Presentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #FFFF99;
+      color: #fff;
+    }
+
+    
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: linear-gradient(to right,  #0ff 0%, #0cf 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 40px;
+      z-index: 1000; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .logo {
+      width: 70px;
+      height: auto;
+      margin-left: 5px;
+    }
+
+    .navbar h1 {
+      font-size: 24px;
+      color: hsl(0, 38%, 3%);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: hsl(190, 75%, 2%);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #FF0066;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: hwb(180 15% 4%);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 160px;
+      height: calc(100% - 70px);
+      background: linear-gradient(to bottom, #FF0066, #34495e);
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.4);
+      
+    }
+
+    .sidebar a {
+      color: #ecf0f1;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background: #00bcd4;
+      color: #000;
+      transform: translateX(10px);
+      font-weight: bold;
+    }
+
+    /* Content */
+    .content {
+      margin-left: 180px;
+      padding-top: 80px;
+    }
+
+    .slide {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid hsl(0, 86%, 23%);
+      position: relative;
+    }
+
+    .slide img {
+      max-height: 85%;
+      max-width: 90%;
+      border-radius: 14px;
+      box-shadow: 10px 10px 45px #ff0909b4;
+      transition: all 0.5s ease;
+    }
+
+    .slide img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 60px rgba(4, 12, 12, 0.4);
+    }
+
+    .slide-number {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 15px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+    
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 15px 25px;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="https://patnacollege.ac.in/assets/images/logo/logo.png" alt="logo"
+    class="logo">
+    <h1>Patna University</h1>
+    <div class="nav-links">
+      <a href="#slide1">Home</a>
+      <a href="#slide5">Middle</a>
+      <a href="#slide10">End</a>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <a href="#slide1">Slide 1</a>
+    <a href="#slide2">Slide 2</a>
+    <a href="#slide3">Slide 3</a>
+    <a href="#slide4">Slide 4</a>
+    <a href="#slide5">Slide 5</a>
+    <a href="#slide6">Slide 6</a>
+    <a href="#slide7">Slide 7</a>
+    <a href="#slide8">Slide 8</a>
+    <a href="#slide9">Slide 9</a>
+    <a href="#slide10">Slide 10</a>
+  </div>
+
+  <div class="content">
+    <div class="slide" id="slide1"><span class="slide-number">Slide 1</span><img src="imageerase.jpg" alt="Slide 1"></div>
+    <div class="slide" id="slide2"><span class="slide-number">Slide 2</span><img src="image2.jpg" alt="Slide 2"></div>
+    <div class="slide" id="slide3"><span class="slide-number">Slide 3</span><img src="image3.jpg" alt="Slide 3"></div>
+    <div class="slide" id="slide4"><span class="slide-number">Slide 4</span><img src="types.jpg" alt="Slide 4"></div>
+    <div class="slide" id="slide5"><span class="slide-number">Slide 5</span><img src="image5.jpg" alt="Slide 5"></div>
+    <div class="slide" id="slide6"><span class="slide-number">Slide 6</span><img src="image6.jpg" alt="Slide 6"></div>
+    <div class="slide" id="slide7"><span class="slide-number">Slide 7</span><img src="image7.jpg" alt="Slide 7"></div>
+    <div class="slide" id="slide8"><span class="slide-number">Slide 8</span><img src="image8.jpg" alt="Slide 8"></div>
+    <div class="slide" id="slide9"><span class="slide-number">Slide 9</span><img src="image9.jpg" alt="Slide 9"></div>
+    <div class="slide" id="slide10"><span class="slide-number">Slide 10</span><img src="image10.jpg" alt="Slide 10"></div>
+  </div>
+</body>
+</html>
